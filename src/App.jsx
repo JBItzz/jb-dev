@@ -49,8 +49,19 @@ export default function App() {
         <h2 className="text-xl font-bold text-zinc-300 uppercase tracking-wider mb-4">
           Roster & Administration
         </h2>
-        <div className="grid grid-cols-1 gap-4">
-          {/* Member Card */}
+        <div className="grid grid-cols-1 gap-3">
+          
+          {/* Mayor Card */}
+          <div className="flex flex-col sm:flex-row items-center justify-between p-4 rounded-md bg-zinc-900/80 border border-zinc-800">
+            <span className="text-[#C5A021] font-mono tracking-wide text-sm font-bold uppercase">
+              Mayor
+            </span>
+            <span className="text-zinc-200 font-semibold text-lg mt-1 sm:mt-0">
+              ASTRAL
+            </span>
+          </div>
+
+          {/* Chief of Staff Card */}
           <div className="flex flex-col sm:flex-row items-center justify-between p-4 rounded-md bg-zinc-900/80 border border-zinc-800">
             <span className="text-[#C5A021] font-mono tracking-wide text-sm font-bold uppercase">
               Chief of Staff
@@ -59,6 +70,17 @@ export default function App() {
               ARCTIC
             </span>
           </div>
+
+          {/* Lead Developer Card */}
+          <div className="flex flex-col sm:flex-row items-center justify-between p-4 rounded-md bg-zinc-900/80 border border-zinc-800">
+            <span className="text-[#C5A021] font-mono tracking-wide text-sm font-bold uppercase">
+              Lead Developer
+            </span>
+            <span className="text-zinc-200 font-semibold text-lg mt-1 sm:mt-0">
+              itzz JB
+            </span>
+          </div>
+
         </div>
       </div>
 
