@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 
 export default function App() {
-  // 🔗 PASTE YOUR DISCORD INVITE LINKS INSIDE THESE QUOTES:
-  const MAIN_SERVER_LINK = "https://discord.gg/YOUR_MAIN_SERVER_CODE";
-  const LAPD_SERVER_LINK = "https://discord.gg/YOUR_LAPD_CODE";
-  const LASD_SERVER_LINK = "https://discord.gg/YOUR_LASD_CODE";
+  // 🔗 Fixed Live Server Invite Links
+  const MAIN_SERVER_LINK = "https://discord.gg/LACOMM";
+  const LAPD_SERVER_LINK = "https://discord.gg/ErhY3C4Aet";
+  const LASD_SERVER_LINK = "https://discord.gg/RFRWYhh9Vr";
 
   useEffect(() => {
     if (window.location.hostname === 'localhost') return;
@@ -118,32 +118,3 @@ export default function App() {
               />
               <h3 className="text-lg font-bold text-zinc-200 group-hover:text-[#C5A021] transition">LAPD</h3>
               <p className="text-xs text-zinc-500 mt-1">Los Angeles Police Department</p>
-            </a>
-
-            {/* LASD Link & Logo */}
-            <a 
-              href={LASD_SERVER_LINK}
-              target="_blank"
-              rel="noreferrer"
-              className="p-4 rounded-md bg-zinc-900/80 border border-zinc-800 hover:border-[#C5A021] transition group flex flex-col items-center"
-            >
-              <img 
-                src="/LASD.webp" 
-                alt="LASD Logo" 
-                className="w-16 h-16 object-contain mb-3"
-              />
-              <h3 className="text-lg font-bold text-zinc-200 group-hover:text-[#C5A021] transition">LASD</h3>
-              <p className="text-xs text-zinc-500 mt-1">Los Angeles Sheriff's Department</p>
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-      {/* Footer */}
-      <footer className="mt-8 text-xs text-zinc-600 tracking-wider uppercase">
-        Portal Developed by itzz JB &bull; ITZZ Systems
-      </footer>
-    </div>
-  );
-}
