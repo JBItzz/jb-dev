@@ -13,7 +13,7 @@ const data = {
       { name: "Lead Developer", value: "`itzz JB`", inline: true },
       { name: "Environment", value: "`Production`", inline: true },
     ],
-    footer: { text: "Statesman Systems • Automated Infrastructure Logs" },
+    footer: { text: "ITZZ Systems • Automated Infrastructure Logs" },
     timestamp: new Date().toISOString()
   }]
 };
