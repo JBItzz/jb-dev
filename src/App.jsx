@@ -48,12 +48,12 @@ export default function App() {
         <hr className="border-zinc-800 my-6 w-full" />
 
         {/* Roster & Administration Section */}
-        <div className="text-center">
+        <div className="text-center mb-8">
           <h2 className="text-xl font-bold text-[#C5A021] uppercase tracking-wider mb-6">
             Roster & Administration
           </h2>
           
-          {/* Plain Text Layout Group */}
+          {/* Classic Text Layout Group */}
           <div className="space-y-3 text-base sm:text-lg tracking-wide">
             <p className="text-zinc-300">
               <span className="text-[#C5A021] font-bold">Mayor:</span> ASTRAL
@@ -64,6 +64,36 @@ export default function App() {
             <p className="text-zinc-300">
               <span className="text-[#C5A021] font-bold">Lead Developer:</span> itzz JB
             </p>
+          </div>
+        </div>
+
+        {/* Divider Line */}
+        <hr className="border-zinc-800 my-6 w-full" />
+
+        {/* Department Info & Server Links Section */}
+        <div className="text-center">
+          <h2 className="text-xl font-bold text-[#C5A021] uppercase tracking-wider mb-6">
+            Municipal Departments
+          </h2>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md mx-auto">
+            {/* LAPD Link */}
+            <a 
+              href="#" 
+              className="p-4 rounded-md bg-zinc-900/80 border border-zinc-800 hover:border-[#C5A021] transition group"
+            >
+              <h3 className="text-lg font-bold text-zinc-200 group-hover:text-[#C5A021] transition">LAPD</h3>
+              <p className="text-xs text-zinc-500 mt-1">Los Angeles Police Department</p>
+            </a>
+
+            {/* LASD Link */}
+            <a 
+              href="#" 
+              className="p-4 rounded-md bg-zinc-900/80 border border-zinc-800 hover:border-[#C5A021] transition group"
+            >
+              <h3 className="text-lg font-bold text-zinc-200 group-hover:text-[#C5A021] transition">LASD</h3>
+              <p className="text-xs text-zinc-500 mt-1">Los Angeles Sheriff's Department</p>
+            </a>
           </div>
         </div>
 
