@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function Portfolio() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -16,29 +16,60 @@ export default function Portfolio() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // The true pixelated matrix layout from your screen recording
-  const PixelMatrix = () => (
-    <div className="w-full h-12 overflow-hidden opacity-[0.15] grid grid-cols-[repeat(40,minmax(0,1fr))] gap-[5px] justify-center pointer-events-none select-none">
-      {Array.from({ length: 160 }).map((_, i) => (
-        <div 
-          key={i} 
-          className={`w-2 h-2 rounded-[2px] mx-auto transition-colors duration-200
-            ${isDarkMode ? 'bg-neutral-400' : 'bg-neutral-600'}`}
-        />
-      ))}
-    </div>
-  );
+  // Live twinkling grid animation state logic
+  const LivePixelMatrix = () => {
+    const totalBlocks = 160;
+    const [activeBlocks, setActiveBlocks] = useState(new Set());
+
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setActiveBlocks((prev) => {
+          const next = new Set(prev);
+          // Randomly drop old twinkling dots
+          next.forEach((id) => {
+            if (Math.random() > 0.4) next.delete(id);
+          });
+          // Pick a burst of new random square indexes to light up
+          for (let i = 0; i < 25; i++) {
+            const randomIndex = Math.floor(Math.random() * totalBlocks);
+            next.add(randomIndex);
+          }
+          return next;
+        });
+      }, 250); // Refresh interval rate for smooth fade shifts
+
+      return () => clearInterval(interval);
+    }, []);
+
+    return (
+      <div className="w-full h-12 overflow-hidden grid grid-cols-[repeat(40,minmax(0,1fr))] gap-[5px] justify-center pointer-events-none select-none">
+        {Array.from({ length: totalBlocks }).map((_, i) => {
+          const isActive = activeBlocks.has(i);
+          return (
+            <div 
+              key={i} 
+              style={{ contentVisibility: 'auto' }}
+              className={`w-2 h-2 rounded-[2px] mx-auto transition-all duration-[700ms] ease-in-out
+                ${isDarkMode 
+                  ? (isActive ? 'bg-neutral-500/80 scale-[1.05]' : 'bg-neutral-800/25') 
+                  : (isActive ? 'bg-neutral-400/80 scale-[1.05]' : 'bg-neutral-200/40')}`}
+            />
+          );
+        })}
+      </div>
+    );
+  };
 
   return (
     <div className={`font-sans antialiased min-h-screen relative pb-36 transition-colors duration-300 selection:bg-neutral-800
       ${isDarkMode ? 'bg-[#0c0c0c] text-[#A3A3A3]' : 'bg-[#FAFAFA] text-[#525252]'}`}
     >
-      {/* Top Authentic Rounded-Square Grid Mask */}
-      <div className="absolute top-0 inset-x-0 pt-3 mask-gradient-to-b">
-        <PixelMatrix />
+      {/* Top Live Animated Matrix Block */}
+      <div className="absolute top-0 inset-x-0 pt-3 [mask-image:linear-gradient(to_bottom,white_70%,transparent)]">
+        <LivePixelMatrix />
       </div>
 
-      {/* Main Content Area */}
+      {/* Main Container */}
       <div className="max-w-md mx-auto px-6 pt-16 space-y-10 relative z-10">
         
         {/* Header Section */}
@@ -102,7 +133,7 @@ export default function Portfolio() {
           </div>
         </div>
 
-        {/* Contact CTA Section */}
+        {/* Contact Container with Live Grid Embedded Behind Text */}
         <div className={`rounded-2xl border text-center transition-colors overflow-hidden relative pt-6 pb-6 px-6 space-y-4
           ${isDarkMode ? 'bg-neutral-950/40 border-neutral-800' : 'bg-neutral-100 border-neutral-200'}`}
         >
@@ -120,9 +151,9 @@ export default function Portfolio() {
             </a>
           </div>
 
-          {/* Bottom Custom Pixelated Panel Background Element */}
-          <div className="absolute bottom-0 inset-x-0 opacity-[0.4] pointer-events-none select-none">
-            <PixelMatrix />
+          {/* Bottom Live Animated Panel Elements inside container card */}
+          <div className="absolute bottom-0 inset-x-0 [mask-image:linear-gradient(to_top,white_40%,transparent)]">
+            <LivePixelMatrix />
           </div>
         </div>
       </div>
@@ -132,7 +163,7 @@ export default function Portfolio() {
         <div className={`border backdrop-blur-xl px-4 py-3 rounded-full flex items-center gap-5 shadow-2xl transition-all duration-300
           ${isDarkMode ? 'bg-[#161616]/90 border-neutral-800/80' : 'bg-white/90 border-neutral-200'}`}
         >
-          {/* Home Scroll Button */}
+          {/* Scroll Home Link Button */}
           <button 
             onClick={scrollToTop}
             className={`transition-all p-2 rounded-full border active:scale-95
@@ -143,7 +174,7 @@ export default function Portfolio() {
             </svg>
           </button>
           
-          {/* Theme Toggle Button */}
+          {/* Theme Switcher Toggle Button */}
           <button 
             onClick={() => setIsDarkMode(!isDarkMode)}
             className={`transition-all p-2 rounded-full border active:scale-95
@@ -162,7 +193,7 @@ export default function Portfolio() {
 
           <div className={`w-[1px] h-5 ${isDarkMode ? 'bg-neutral-800' : 'bg-neutral-300'}`} />
 
-          {/* Discord Profile Link */}
+          {/* Discord Navigation Target Link */}
           <a 
             href="https://discord.com/users/1449065587895701575" 
             target="_blank" 
@@ -174,7 +205,7 @@ export default function Portfolio() {
             </svg>
           </a>
 
-          {/* GitHub Profile Link */}
+          {/* GitHub Navigation Target Link */}
           <a 
             href="https://github.com/JBItzz" 
             target="_blank" 
@@ -186,7 +217,7 @@ export default function Portfolio() {
             </svg>
           </a>
 
-          {/* Roblox Profile Link */}
+          {/* Roblox Profile Target Link */}
           <a 
             href="https://www.roblox.com/users/2750965033/profile" 
             target="_blank" 
