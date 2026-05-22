@@ -4,15 +4,12 @@ export default function Portfolio() {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
   const experiences = [
-    { company: "Florida State Roleplay", role: "Developer", period: "November 2025 - Present", icon: "🌲" },
-    { company: "Federate", role: "Director", period: "October 2024 - Present", icon: "🔵" },
-    { company: "OMB Productions", role: "Recording Team", period: "March 2026 - Present", icon: "🎬" },
-    { company: "Sway", role: "Developer", period: "August 2025 - Present", icon: "💻" },
-    { company: "ERLCX", role: "Developer", period: "January 2026 - Present", icon: "🚗" },
-    { company: "Liberty Training Academy", role: "Developer", period: "August 2025 - Present", icon: "🦅" },
-    { company: "AnchorCAD", role: "Developer", period: "May 2026 - Current", icon: "⚓" },
-    { company: "Central", role: "Developer", period: "May 2025 - March 2026", icon: "🏢" },
-    { company: "Northca Systems", role: "Developer", period: "July 2025 - May 2026", icon: "🛠️" },
+    { company: "JB Productions", role: "Founder", period: "Present", icon: "🎬" },
+    { company: "JJC Gaming", role: "Production Team", period: "Present", icon: "🎮" },
+    { company: "BlueLine Productions", role: "Marketing & Visuals", period: "Present", icon: "📈" },
+    { company: "Colorado State Roleplay", role: "Developer & Staff", period: "Present", icon: "🌲" },
+    { company: "CLD", role: "Management", period: "Present", icon: "💼" },
+    { company: "NetSentra", role: "Enquiry Support Team", period: "Present", icon: "🛠️" },
   ];
 
   const scrollToTop = () => {
@@ -82,7 +79,7 @@ export default function Portfolio() {
           </div>
 
           <h1 className={`text-3xl font-bold tracking-tight transition-colors ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>
-            Hi, I'm Toby
+            Hi, I'm itzz_JB
           </h1>
           
           <p className="text-base leading-relaxed">
@@ -93,7 +90,7 @@ export default function Portfolio() {
         <div className="space-y-3">
           <h2 className={`text-xl font-bold transition-colors ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>About</h2>
           <p className="text-base leading-relaxed">
-            I'm a 15 year old developer from the UK, just filling my time with learning programming and playing games. 
+            I'm a 14 year old developer from the UK, just filling my time with learning programming and playing games. 
             I'm currently learning about backend development more - specifically on APIs and WebSockets.
           </p>
         </div>
