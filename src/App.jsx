@@ -4,14 +4,55 @@ export default function Portfolio() {
 const [isDarkMode, setIsDarkMode] = useState(true);
 
 const experiences = [
-{ company: "JB Productions", role: "Founder", period: "Present", icon: "🎬" },
-{ company: "JJC Gaming", role: "Production Team", period: "Present", icon: "🎮" },
-{ company: "BlueLine Productions", role: "Marketing & Visuals", period: "Present", icon: "📈" },
-{ company: "Colorado State Roleplay", role: "Developer & Staff", period: "Present", icon: "🌲" },
-{ company: "CLD", role: "Management", period: "Present", icon: "💼" },
-{ company: "NetSentra", role: "Enquiry Support Team", period: "Present", icon: "🛠️" },
-];
+  { 
+    company: "JB Productions", 
+    role: "Founder", 
+    period: "Present", 
+    image: "jbproductions.png" 
+  },
 
+  { 
+    company: "NetSentra", 
+    role: "Server Staff Lead", 
+    period: "Present", 
+    image: "netsentra.png" 
+  },
+
+  { 
+    company: "JJC Gaming", 
+    role: "Production Team", 
+    period: "Present", 
+    image: "jjcgaming.png" 
+  },
+
+  { 
+    company: "BlueLine Productions", 
+    role: "Marketing & Visuals", 
+    period: "Present", 
+    image: "bluelineproductions.png" 
+  },
+
+  { 
+    company: "Colorado State Roleplay", 
+    role: "Developer & Staff", 
+    period: "Present", 
+    image: "coloradostateroleplay.png" 
+  },
+
+  { 
+    company: "CLD", 
+    role: "Management", 
+    period: "Present", 
+    image: "cld.png" 
+  },
+
+  { 
+    company: "NetSentra", 
+    role: "Enquiry Support Team", 
+    period: "Present", 
+    image: "netsentra.png" 
+  },
+];
 const skills = [
 {
   name: "JavaScript",
