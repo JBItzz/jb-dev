@@ -332,7 +332,3 @@ export default function Portfolio() {
     </div>
   );
 }
-
-
-Change ONLY 1 THING
-The SKILLS part shouldn't be like in a line or like that in the code. It should be LIVE ANIMATED LIKE THIS VIDEO. 
