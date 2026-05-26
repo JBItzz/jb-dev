@@ -106,7 +106,7 @@ export default function Portfolio() {
         <div className="space-y-3">
           <h2 className={`text-xl font-bold transition-colors ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>About</h2>
           <p className="text-base leading-relaxed">
-            I'm a 14 year old developer from the UK, just filling my time with learning programming and playing games. 
+            I'm a young developer, I am just filling my time with learning programming and playing games. 
             I'm currently learning about backend development more - specifically on APIs and WebSockets.
           </p>
         </div>
