@@ -86,7 +86,7 @@ export default function Portfolio() {
             ${isDarkMode ? 'border-neutral-800' : 'border-neutral-200'}`}
           >
             <img
-              src="kingsman_avatar.png" 
+              src="JB.png" 
               alt="Profile"
               className="w-full h-full object-cover"
               onError={(e) => { e.target.src = 'https://via.placeholder.com/150'; }}
