@@ -94,7 +94,7 @@ export default function Portfolio() {
           </div>
 
           <h1 className={`text-3xl font-bold tracking-tight transition-colors ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>
-            Hi, I'm itzz_JB
+            Hi, I'm Merlin
           </h1>
 
           <p className="text-base leading-relaxed">
