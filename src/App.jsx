@@ -3,9 +3,8 @@ import React, { useState, useEffect } from 'react';
 export default function Portfolio() {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
-  // Synchronized with your latest active groups and roles
   const experiences = [
-    { company: "JB Productions", role: "Founder", period: "Present", icon: "🎬" },
+    { company: "Merlin Productions", role: "Chief Foundership", period: "Present", icon: "🎬" },
     { company: "NetSentra", role: "Server Staff Lead", period: "Present", icon: "🛠️" },
     { company: "JJC Gaming", role: "Production Team", period: "Present", icon: "🎮" },
     { company: "BlueLine Productions", role: "Marketing & Visuals", period: "Present", icon: "📈" },
@@ -13,7 +12,6 @@ export default function Portfolio() {
     { company: "CLD", role: "Management", period: "Present", icon: "💼" },
   ];
 
-  // Synchronized tech stack from your recording tags
   const skills = [
     { name: "Fastify", icon: "⚡" },
     { name: "tRPC", icon: "🧙‍♂️" },
@@ -78,9 +76,8 @@ export default function Portfolio() {
         <LivePixelMatrix />
       </div>
 
-      <div className="max-w-md mx-auto px-6 pt-16 space-y-10 relative z-10">
-
-        {/* Header */}
+      <div className="max-w-md mx-auto px-6 pt-16 space-y-10 relative z-10"
+        
         <div className="space-y-5">
           <div className={`w-24 h-24 rounded-full overflow-hidden border bg-neutral-900 shadow-md transition-colors
             ${isDarkMode ? 'border-neutral-800' : 'border-neutral-200'}`}
@@ -102,7 +99,6 @@ export default function Portfolio() {
           </p>
         </div>
 
-        {/* About */}
         <div className="space-y-3">
           <h2 className={`text-xl font-bold transition-colors ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>About</h2>
           <p className="text-base leading-relaxed">
@@ -111,7 +107,6 @@ export default function Portfolio() {
           </p>
         </div>
 
-        {/* Work Experience */}
         <div className="space-y-4">
           <h2 className={`text-xl font-bold transition-colors ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>Work Experience</h2>
           <div className="space-y-5">
@@ -140,13 +135,12 @@ export default function Portfolio() {
           </div>
         </div>
 
-        {/* Skills (Infinite Horizontal Scroll Marquee) */}
         <div className="space-y-4 overflow-hidden -mx-6">
           <h2 className={`text-xl font-bold px-6 transition-colors ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>Skills</h2>
           
           <div className={`relative flex overflow-x-hidden border-y py-3 ${isDarkMode ? 'border-neutral-900 bg-neutral-950/20' : 'border-neutral-200 bg-neutral-100/40'}`}>
             <div className="animate-marquee whitespace-nowrap flex items-center gap-8">
-              {/* First Track Loop */}
+             
               {skills.map((skill, index) => (
                 <div key={`track1-${index}`} className="flex items-center gap-2 mx-2">
                   <div className={`w-7 h-7 rounded-md flex items-center justify-center border text-sm ${isDarkMode ? 'bg-neutral-900 border-neutral-800 text-neutral-400' : 'bg-white border-neutral-200 text-neutral-500'}`}>
@@ -159,7 +153,6 @@ export default function Portfolio() {
                 </div>
               ))}
               
-              {/* Second Track Loop for seamless loop alignment */}
               {skills.map((skill, index) => (
                 <div key={`track2-${index}`} className="flex items-center gap-2 mx-2">
                   <div className={`w-7 h-7 rounded-md flex items-center justify-center border text-sm ${isDarkMode ? 'bg-neutral-900 border-neutral-800 text-neutral-400' : 'bg-white border-neutral-200 text-neutral-500'}`}>
@@ -175,7 +168,6 @@ export default function Portfolio() {
           </div>
         </div>
 
-        {/* Contact */}
         <div className={`rounded-2xl border text-center transition-colors overflow-hidden relative pt-6 pb-6 px-6 space-y-4
           ${isDarkMode ? 'bg-neutral-950/30 border-neutral-800' : 'bg-neutral-100 border-neutral-200'}`}
         >
@@ -199,7 +191,6 @@ export default function Portfolio() {
         </div>
       </div>
 
-      {/* Floating Nav */}
       <div className="fixed bottom-6 inset-x-0 flex justify-center z-50 px-4">
         <div className={`border px-3 py-2 rounded-full flex items-center gap-3 shadow-2xl transition-all duration-300
           ${isDarkMode ? 'bg-[#111111]/90 border-neutral-800/90' : 'bg-white/90 border-neutral-200'}`}
